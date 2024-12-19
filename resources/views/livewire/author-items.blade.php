@@ -3,12 +3,13 @@
         <button  wire:click="$emit('openModal', 'author-modal')"  class="btn btn-outline-primary m-3 ">إضافة جديد</button >
           <a  class="btn btn-outline-primary m-3 " href="{{route('platforms')}}">المنصات</a>
     </div>
+    <input wire:keyup="search" wire:model="search_text" placeholder="بحث عن كاتب" class="form-control my-2" >
     <table class="table">
         <thead>
           <tr>
             <th scope="col">صورة الكاتب</th>
-            <th scope="col">اسم الكاتب</th>
-            <th scope="col">عمل الكاتب</th>
+            <th scope="col" >اسم الكاتب   <span  wire:click="toggleSortDirection('name')"class="fa fa-angle-up"> </span></th>
+            <th scope="col" >عمل الكاتب   <span  wire:click="toggleSortDirection('work')"class="fa fa-angle-up"> </span></th>
             <th scope="col">نبذة عن الكاتب</th>
             <th>المنصات</th>
             <th> العمليات</th>
